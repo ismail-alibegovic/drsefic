@@ -33,3 +33,10 @@ Fontovi (lokalno, preko Fontsource): Schibsted Grotesk (naslovi), Instrument San
 - Sav tekst potiče s javne stranice sefic.ba; jezički je uređen i skraćen bez promjene medicinskog značenja. Nema izmišljenih ljekara, recenzija, statistika ni opreme.
 - Obrazac na `/kontakt` samo priprema `mailto:` poruku u korisnikovom e-mail programu — ništa se ne šalje s ove stranice.
 - Prije bilo kakve javne ili komercijalne upotrebe potrebna je saglasnost poliklinike za sadržaj, fotografije i logotip (vidi `docs/ASSETS.md`).
+
+## Animacije
+
+- **Hero:** naslov se otkriva red po red (maska), tekst i dugmad ulaze sa zadrškom, fotografija ljekara se podiže, a koncentrični krugovi se iscrtavaju i zatim polako rotiraju uz povremeni «puls». Sve je čisti CSS (`globals.css`), bez JavaScripta.
+- **Skrol** (`src/components/ScrollFx.tsx`): paralaks fotografija, otkrivanje slike maskom, iscrtavanje vremenske linije, pomak velikog broja «100», brojač i linija napretka ispod zaglavlja.
+- Animira se samo `transform`, `opacity` i (jednokratno) `clip-path`. Uz `prefers-reduced-motion` sve se svodi na trenutni prikaz bez kretanja.
+- Ako se izmjene u `globals.css` ne vide u `npm run dev`, obrišite `.next` i ponovo pokrenite server.

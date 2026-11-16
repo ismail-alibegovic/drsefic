@@ -8,6 +8,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { nav, site } from "@/content/site";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
+import { ScrollProgress } from "./ScrollFx";
 
 export function Header() {
   const pathname = usePathname();
@@ -84,6 +85,8 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      <ScrollProgress />
 
       <AnimatePresence>
         {open && (

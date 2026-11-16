@@ -136,7 +136,104 @@ body {
   }
 }
 
+/* ---------- Hero: ulazna animacija (samo transform/opacity) ---------- */
+@keyframes line-up {
+  from { transform: translateY(108%) rotate(2.5deg); }
+  to { transform: none; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(36px) scale(0.975); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.92); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes floaty {
+  from { transform: translateY(-4px); }
+  to { transform: translateY(4px); }
+}
+@keyframes ring-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes ring-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes ring-pulse {
+  0% { transform: scale(0.45); opacity: 0; }
+  15% { opacity: 0.5; }
+  100% { transform: scale(1.02); opacity: 0; }
+}
+@keyframes rings-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+
+.hero-line {
+  display: block;
+  overflow: hidden;
+  /* prostor za dijakritike i kurziv da ih maska ne odsiječe */
+  padding: 0.12em 0.08em 0.14em 0;
+  margin-top: -0.26em; /* susjedne negativne margine se stapaju, pa sve ide na gornju */
+}
+.hero-line:first-child {
+  margin-top: -0.12em;
+}
+.hero-line:last-child {
+  margin-bottom: -0.14em;
+}
+.hero-line > span {
+  display: block;
+  transform-origin: left bottom;
+  animation: line-up 1s var(--ease-out-soft) both;
+  animation-delay: calc(var(--i, 0) * 110ms + 120ms);
+}
+.hero-fade {
+  animation: fade-up 0.8s var(--ease-out-soft) both;
+  animation-delay: var(--d, 0ms);
+}
+.hero-rise {
+  animation: rise-in 1.2s var(--ease-out-soft) both;
+  animation-delay: var(--d, 0ms);
+}
+.hero-pop {
+  animation: pop-in 0.6s var(--ease-out-soft) both;
+  animation-delay: var(--d, 0ms);
+}
+.hero-float {
+  animation: floaty 5s ease-in-out infinite alternate;
+  animation-delay: var(--d, 0ms);
+}
+.rings-animated {
+  animation: rings-in 1.6s var(--ease-out-soft) both;
+  animation-delay: 200ms;
+}
+.rings-animated .ring-cw,
+.rings-animated .ring-ccw,
+.rings-animated .ring-pulse {
+  transform-origin: 300px 300px;
+}
+.rings-animated .ring-cw { animation: ring-spin 90s linear infinite; }
+.rings-animated .ring-ccw { animation: ring-spin 70s linear infinite reverse; }
+.rings-animated .ring-arc {
+  stroke-dasharray: 1;
+  animation: ring-draw 1.8s var(--ease-out-soft) both;
+  animation-delay: calc(var(--i, 0) * 180ms + 600ms);
+}
+.rings-animated .ring-pulse { animation: ring-pulse 6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite 2s; opacity: 0; }
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-float,
+  .rings-animated .ring-cw,
+  .rings-animated .ring-ccw,
+  .rings-animated .ring-pulse {
+    animation: none !important;
+  }
   html {
     scroll-behavior: auto;
   }
@@ -144,6 +241,7 @@ body {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     transition-duration: 0.01ms !important;
   }
 }

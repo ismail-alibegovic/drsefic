@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
+import { Parallax } from "@/components/ScrollFx";
 
 const offer = [
   "Okviri za naočale raznih vrsta i oblika",
@@ -17,13 +18,15 @@ export function Optical() {
         <Reveal className="lg:col-span-6">
           <figure className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] sm:aspect-[3/2] md:rounded-[2rem] lg:aspect-[4/5]">
-              <Image
-                src="/images/optical/opticki-studio.jpg"
-                alt="Optički studio Dr. Sefić – police s okvirima za naočale i članica tima"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-[62%_50%]"
-              />
+              <Parallax amount={6}>
+                <Image
+                  src="/images/optical/opticki-studio.jpg"
+                  alt="Optički studio Dr. Sefić – police s okvirima za naočale i članica tima"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover object-[62%_50%]"
+                />
+              </Parallax>
             </div>
             <figcaption className="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-navy backdrop-blur">
               Optički studio · Ferhadija 5/1

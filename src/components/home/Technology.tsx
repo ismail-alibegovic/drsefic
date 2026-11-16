@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
+import { CountUp } from "@/components/ScrollFx";
 import { equipment } from "@/content/equipment";
 
 export function Technology() {
@@ -37,7 +38,8 @@ export function Technology() {
               </div>
               <div className="mt-auto grid gap-6 border-t border-line p-7 md:grid-cols-[auto_1fr] md:gap-10 md:p-10">
                 <p className="font-display text-6xl font-semibold leading-none tracking-tighter text-navy md:text-7xl">
-                  4 000<span className="text-blue">+</span>
+                  <CountUp value={4000} />
+                  <span className="text-blue">+</span>
                   <span className="mt-2 block font-sans text-sm font-medium tracking-normal text-muted">
                     kadrova u sekundi
                   </span>

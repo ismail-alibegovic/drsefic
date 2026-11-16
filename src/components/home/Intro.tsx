@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowLink } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
+import { ImageReveal } from "@/components/ScrollFx";
 
 const pillars = [
   {
@@ -39,8 +40,8 @@ export function Intro() {
       </div>
 
       <div className="mt-14 grid gap-5 md:mt-20 lg:grid-cols-12">
-        <Reveal className="lg:col-span-8">
-          <figure className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] md:rounded-[2rem]">
+        <div className="lg:col-span-8">
+          <ImageReveal className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] md:rounded-[2rem]">
             <Image
               src="/images/clinic/recepcija.jpg"
               alt="Recepcija Očne poliklinike Dr. Sefić s natpisom «Dr. Sefić»"
@@ -48,8 +49,8 @@ export function Intro() {
               sizes="(min-width: 1024px) 66vw, 100vw"
               className="object-cover"
             />
-          </figure>
-        </Reveal>
+          </ImageReveal>
+        </div>
         <Reveal delay={0.12} className="grid gap-5 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-1">
           <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] lg:aspect-auto lg:h-full lg:min-h-48">
             <Image
