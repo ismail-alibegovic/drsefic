@@ -2,6 +2,13 @@ import Image from "next/image";
 import { ArrowLink } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { ImageReveal } from "@/components/ScrollFx";
+import { DoorOpen, House, Ruler } from "lucide-react";
+
+const facts = [
+  { Icon: DoorOpen, k: "4", v: "Ambulante rade paralelno, uz kraće čekanje" },
+  { Icon: Ruler, k: "140 m²", v: "Ambulante, operaciona sala i Optički studio" },
+  { Icon: House, k: "Isti dan", v: "Odlazak kući nakon operativnog zahvata" },
+];
 
 const pillars = [
   {
@@ -25,7 +32,7 @@ export function Intro() {
         <Reveal className="lg:col-span-7">
           <p className="eyebrow">Poliklinika</p>
           <h2 id="poliklinika-naslov" className="display t-2 mt-6 text-navy">
-            Od prvog pregleda do operacione sale – <em className="text-blue">pod jednim krovom.</em>
+            Od prvog pregleda do operacione sale – pod jednim krovom.
           </h2>
         </Reveal>
         <Reveal delay={0.1} className="lg:col-span-4 lg:col-start-9 lg:pt-14">
@@ -51,24 +58,20 @@ export function Intro() {
             />
           </ImageReveal>
         </div>
-        <Reveal delay={0.12} className="grid gap-5 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-1">
-          <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] lg:aspect-auto lg:h-full lg:min-h-48">
-            <Image
-              src="/images/clinic/cekaonica.jpg"
-              alt="Čekaonica poliklinike sa zelenim foteljama i umjetničkim slikama"
-              fill
-              sizes="(min-width: 1024px) 33vw, 50vw"
-              className="object-cover"
-            />
-          </figure>
-          <div className="flex flex-col justify-between rounded-[1.5rem] bg-navy p-7 text-white">
-            <p className="font-display text-6xl font-semibold tracking-tighter">
-              4<span className="accent ml-2 text-3xl text-blue-300">ambulante</span>
-            </p>
-            <p className="mt-6 text-[0.95rem] text-white/70">
-              Četiri potpuno opremljene ambulante rade paralelno – za efikasan protok pacijenata i kraće čekanje.
-            </p>
-          </div>
+        <Reveal delay={0.12} className="lg:col-span-4">
+          <dl className="flex h-full flex-col justify-between gap-2 rounded-[1.5rem] bg-ice p-3 md:rounded-[2rem]">
+            {facts.map(({ Icon, k, v }) => (
+              <div key={k} className="flex flex-1 items-center gap-5 rounded-[1.1rem] bg-white px-6 py-5 md:rounded-[1.5rem]">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-ice text-blue">
+                  <Icon aria-hidden className="size-5" />
+                </span>
+                <div>
+                  <dt className="font-display text-[2rem] font-semibold leading-none tracking-tight text-navy">{k}</dt>
+                  <dd className="mt-1.5 text-sm text-muted">{v}</dd>
+                </div>
+              </div>
+            ))}
+          </dl>
         </Reveal>
       </div>
 

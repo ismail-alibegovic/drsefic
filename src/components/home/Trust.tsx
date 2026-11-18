@@ -10,7 +10,7 @@ export function Trust() {
         <Reveal>
           <p className="eyebrow">Povjerenje</p>
           <h2 id="povjerenje-naslov" className="display t-2 mt-6 max-w-3xl text-navy">
-            Standardi koje je moguće <em className="text-blue">provjeriti.</em>
+            Standardi koje je moguće provjeriti.
           </h2>
         </Reveal>
 

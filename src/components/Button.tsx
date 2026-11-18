@@ -2,12 +2,13 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "ghost" | "light" | "outline-light";
+type Variant = "primary" | "ghost" | "soft" | "light" | "outline-light";
 
 const styles: Record<Variant, string> = {
   primary:
-    "bg-blue text-white hover:bg-blue-600 shadow-[0_10px_30px_-12px_rgba(8,127,190,0.7)]",
+    "bg-blue text-white hover:bg-blue-600 shadow-[0_10px_28px_-12px_rgba(0,119,204,0.75)]",
   ghost: "bg-white text-ink ring-1 ring-line hover:ring-blue hover:text-blue",
+  soft: "bg-white/70 text-blue ring-1 ring-blue/15 backdrop-blur hover:bg-white hover:ring-blue/40",
   light: "bg-white text-navy hover:bg-ice",
   "outline-light": "text-white ring-1 ring-white/30 hover:ring-white hover:bg-white/5",
 };
@@ -22,7 +23,7 @@ type Props = {
 };
 
 export function Button({ href, children, variant = "primary", icon, arrow = false, className = "" }: Props) {
-  const cls = `group inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-[0.95rem] font-semibold leading-none transition-all duration-300 ${styles[variant]} ${className}`;
+  const cls = `group inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-[0.95rem] font-semibold leading-none transition-[background-color,color,box-shadow,transform] duration-300 active:scale-[0.98] ${styles[variant]} ${className}`;
   const inner = (
     <>
       {icon}

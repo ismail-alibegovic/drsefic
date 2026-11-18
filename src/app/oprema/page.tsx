@@ -21,7 +21,7 @@ export default function EquipmentPage() {
         crumbs={[{ label: "Oprema" }]}
         title={
           <>
-            Tehnologija u službi <em className="text-blue">tačne dijagnoze.</em>
+            Tehnologija u službi tačne dijagnoze.
           </>
         }
         lead="Pregled dijagnostičke i hirurške opreme koju poliklinika navodi na svojoj stranici – s tehničkim podacima kako ih iznosi poliklinika."
@@ -87,7 +87,7 @@ export default function EquipmentPage() {
           <Reveal>
             <p className="eyebrow">Dijagnostički kabinet</p>
             <h2 id="ostala-oprema" className="display t-2 mt-6 text-navy">
-              Ostala <em className="text-blue">oprema.</em>
+              Ostala oprema.
             </h2>
           </Reveal>
           <ul className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -117,7 +117,7 @@ export default function EquipmentPage() {
           <Reveal className="mt-5">
             <div className="grid items-center gap-8 rounded-[1.5rem] bg-navy p-8 text-white md:p-12 lg:grid-cols-12">
               <p className="font-display text-7xl font-semibold tracking-tighter lg:col-span-4">
-                4<span className="accent ml-3 text-4xl text-blue-300">ambulante</span>
+                4<span className="ml-3 text-4xl font-medium text-blue-300">ambulante</span>
               </p>
               <p className="text-lg text-white/75 lg:col-span-8">{facilities.text}</p>
             </div>

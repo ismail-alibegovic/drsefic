@@ -20,7 +20,7 @@ export function PageHero({
 }) {
   return (
     <section className="container-x pt-2 md:pt-3">
-      <div className="relative isolate overflow-hidden rounded-[1.75rem] bg-ice px-6 pb-14 pt-8 md:rounded-[2.5rem] md:px-14 md:pb-20 md:pt-10">
+      <div className="relative isolate overflow-hidden rounded-[1.75rem] bg-[linear-gradient(105deg,#cfe7fa_0%,#e3f1fc_42%,#f3f9fe_100%)] px-6 pb-14 pt-8 md:rounded-[2.5rem] md:px-14 md:pb-20 md:pt-10">
         <Rings className="pointer-events-none absolute -right-48 -top-56 -z-10 w-[46rem] opacity-70 max-md:opacity-25" />
         <nav aria-label="Putanja">
           <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted">

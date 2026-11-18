@@ -65,7 +65,7 @@ export default function AboutPage() {
       <section aria-labelledby="prica" className="container-x grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-5">
           <h2 id="prica" className="display t-2 text-navy">
-            Poliklinika i Optički studio <em className="text-blue">«Dr. Sefić»</em>
+            Poliklinika i Optički studio «Dr. Sefić»
           </h2>
         </Reveal>
         <Reveal delay={0.1} className="prose-clinic text-lg text-ink/85 lg:col-span-6 lg:col-start-7">
@@ -88,7 +88,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow !text-blue-300">Porodica Sefić</p>
             <h2 id="porodica" className="display t-2 mt-6 max-w-3xl">
-              Tradicija oftalmologije <em className="text-blue-300">kroz više generacija.</em>
+              Tradicija oftalmologije kroz više generacija.
             </h2>
             <p className="mt-6 max-w-2xl text-lg text-white/70">
               Profesionalni put porodice započeo je radom prim. dr. Šefkije Sefića. Danas se znanje, iskustvo i
@@ -128,7 +128,7 @@ export default function AboutPage() {
         <Reveal>
           <p className="eyebrow">Misija, vrijednost i vizija</p>
           <h2 id="mvv" className="display t-2 mt-6 max-w-3xl text-navy">
-            Na čemu <em className="text-blue">gradimo povjerenje.</em>
+            Na čemu gradimo povjerenje.
           </h2>
         </Reveal>
         <dl className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -148,7 +148,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow">Prostor</p>
             <h2 id="galerija" className="display t-2 mt-6 text-navy">
-              Zavirite u <em className="text-blue">našu polikliniku.</em>
+              Zavirite u našu polikliniku.
             </h2>
           </Reveal>
           <ul className="mt-14 grid gap-4 md:grid-cols-6 md:gap-5">
@@ -170,7 +170,7 @@ export default function AboutPage() {
         <Reveal className="lg:col-span-5">
           <p className="eyebrow">Informacije za pacijente</p>
           <h2 id="prava" className="display t-2 mt-6 text-navy">
-            Jednak pristup <em className="text-blue">za svakog pacijenta.</em>
+            Jednak pristup za svakog pacijenta.
           </h2>
           <p className="lead mt-6">
             Svim pacijentima garantuje se jednak pristup i pružanje zdravstvenih usluga bez diskriminacije po bilo kom

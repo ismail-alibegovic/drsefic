@@ -8,7 +8,7 @@ export default function NotFound() {
         <Rings className="pointer-events-none absolute left-1/2 top-1/2 -z-10 w-[44rem] -translate-x-1/2 -translate-y-1/2 opacity-70" />
         <p className="eyebrow justify-center">Greška 404</p>
         <h1 className="display t-1 mx-auto mt-6 max-w-3xl text-navy">
-          Ovu stranicu ne možemo <em className="text-blue">izoštriti.</em>
+          Ovu stranicu ne možemo izoštriti.
         </h1>
         <p className="lead mx-auto mt-6 max-w-xl">Stranica koju tražite ne postoji ili je premještena.</p>
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">

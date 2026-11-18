@@ -139,7 +139,7 @@ export default async function DoctorPage({ params }: PageProps<"/nas-tim/[slug]"
       <section aria-labelledby="ostali" className="bg-soft py-20 md:py-24">
         <div className="container-x">
           <h2 id="ostali" className="display t-2 text-navy">
-            Ostali <em className="text-blue">specijalisti.</em>
+            Ostali specijalisti.
           </h2>
           <ul className="mt-12 grid gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {others.map((o) => (

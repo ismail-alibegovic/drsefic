@@ -29,8 +29,8 @@ export function DoctorCard({ doctor, priority = false }: { doctor: Doctor; prior
         </span>
       </div>
       <div className="mt-5">
-        <p className="text-sm font-medium text-blue">{doctor.focus}</p>
-        <h3 className="t-3 mt-1 text-navy">
+        <p className="inline-flex rounded-full bg-ice px-3 py-1 text-[0.8rem] font-semibold text-blue">{doctor.focus}</p>
+        <h3 className="t-3 mt-3 text-navy">
           {doctor.title} {doctor.name}
         </h3>
         <p className="mt-1 text-sm text-muted">{doctor.role}</p>

@@ -10,7 +10,7 @@ export function TeamSection() {
         <Reveal>
           <p className="eyebrow">Naš tim</p>
           <h2 id="tim-naslov" className="display t-2 mt-6 max-w-3xl text-navy">
-            Specijalisti oftalmologije <em className="text-blue">i optometrije.</em>
+            Specijalisti oftalmologije i optometrije.
           </h2>
         </Reveal>
         <Reveal delay={0.1}>

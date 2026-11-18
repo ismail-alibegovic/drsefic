@@ -20,7 +20,7 @@ export default function TeamPage() {
         crumbs={[{ label: "Naš tim" }]}
         title={
           <>
-            Ljudi kojima povjeravate <em className="text-blue">svoj vid.</em>
+            Ljudi kojima povjeravate svoj vid.
           </>
         }
         lead="Specijalisti oftalmologije i optometrije te medicinsko osoblje koje je uz pacijente kroz svaki korak pregleda i liječenja."
@@ -47,7 +47,7 @@ export default function TeamPage() {
             <Reveal className="lg:col-span-7">
               <p className="eyebrow">Medicinsko osoblje</p>
               <h2 id="osoblje" className="display t-2 mt-6 text-navy">
-                Podrška kroz <em className="text-blue">svaki korak.</em>
+                Podrška kroz svaki korak.
               </h2>
             </Reveal>
           </div>

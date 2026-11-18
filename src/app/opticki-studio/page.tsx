@@ -46,7 +46,7 @@ export default function OpticalPage() {
         crumbs={[{ label: "Optički studio" }]}
         title={
           <>
-            Kompletna optika, <em className="text-blue">korak od ordinacije.</em>
+            Kompletna optika, korak od ordinacije.
           </>
         }
         lead="Optička prodavaonica i radionica koja korisniku pruža sve usluge u vezi s nabavkom očnih pomagala."
@@ -72,7 +72,7 @@ export default function OpticalPage() {
         <Reveal className="lg:col-span-5">
           <p className="eyebrow">Ponuda</p>
           <h2 id="ponuda" className="display t-2 mt-6 text-navy">
-            Sve za jasan vid <em className="text-blue">na jednoj adresi.</em>
+            Sve za jasan vid na jednoj adresi.
           </h2>
           <p className="lead mt-6">
             Leće se u okvire naočala montiraju automatski, na kompjuterskoj 3-D mašini, čime je isključena mogućnost
@@ -114,7 +114,7 @@ export default function OpticalPage() {
           <Reveal delay={0.1} className="lg:col-span-5 lg:col-start-8">
             <p className="eyebrow !text-blue-300">Savjetovanje</p>
             <h2 id="savjetovanje" className="display t-2 mt-6">
-              Most između pregleda <em className="text-blue-300">i svakodnevnog života.</em>
+              Most između pregleda i svakodnevnog života.
             </h2>
             <p className="mt-6 text-lg text-white/75">
               Medicinska sestra zaposlena u optici ima važnu ulogu u završnoj fazi zbrinjavanja pacijenta – od pravilne
@@ -133,7 +133,7 @@ export default function OpticalPage() {
         <Reveal>
           <p className="eyebrow">Kontaktne leće</p>
           <h2 id="lece" className="display t-2 mt-6 max-w-3xl text-navy">
-            Leće odabrane nakon pregleda, <em className="text-blue">uz obuku.</em>
+            Leće odabrane nakon pregleda, uz obuku.
           </h2>
           <p className="lead mt-6 max-w-2xl">
             Unutar kompletnog oftalmološkog pregleda predviđena je obrada i obuka za korištenje kontaktnih leća.

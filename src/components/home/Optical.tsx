@@ -36,7 +36,7 @@ export function Optical() {
         <Reveal delay={0.1} className="lg:col-span-5 lg:col-start-8">
           <p className="eyebrow">Optički studio</p>
           <h2 id="optika-naslov" className="display t-2 mt-6 text-navy">
-            Od nalaza do naočala – <em className="text-blue">bez lutanja.</em>
+            Od nalaza do naočala – bez lutanja.
           </h2>
           <p className="lead mt-6">
             Kompletna optička prodavaonica i radionica. Leće se u okvire montiraju automatski, na kompjuterskoj 3-D

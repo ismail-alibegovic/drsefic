@@ -28,7 +28,7 @@ export default function ContactPage() {
           <Reveal className="lg:col-span-5">
             <p className="eyebrow">Naručivanje</p>
             <h2 id="termin-naslov" className="display t-2 mt-6 text-navy">
-              Kako se naručiti <em className="text-blue">na pregled?</em>
+              Kako se naručiti na pregled?
             </h2>
             <p className="lead mt-6">
               Lično ili telefonom možete se naručiti svaki radni dan između 08:30 i 19:00 te subotom od 08:30 do 14:00

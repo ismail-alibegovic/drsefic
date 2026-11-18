@@ -175,7 +175,7 @@ export default async function ServicePage({ params }: PageProps<"/usluge/[slug]"
               <div>
                 <p className="eyebrow">Tehnologija</p>
                 <h2 id="oprema-usluga" className="display t-2 mt-5 text-navy">
-                  Oprema u <em className="text-blue">ovoj oblasti.</em>
+                  Oprema u ovoj oblasti.
                 </h2>
               </div>
               <Button href="/oprema" variant="ghost" arrow>

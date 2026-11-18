@@ -21,7 +21,7 @@ export default function ServicesPage() {
         crumbs={[{ label: "Usluge" }]}
         title={
           <>
-            Pregledi, dijagnostika i hirurgija oka <em className="text-blue">na jednom mjestu.</em>
+            Pregledi, dijagnostika i hirurgija oka na jednom mjestu.
           </>
         }
         lead="U ordinaciji se obavljaju pregledi oka i sva dijagnostika, a u operacionoj sali operativni zahvati u lokalnoj anesteziji – bez bolničkog zadržavanja."
@@ -67,7 +67,7 @@ export default function ServicesPage() {
           <Reveal>
             <p className="eyebrow">Kompletan popis</p>
             <h2 id="popis-naslov" className="display t-2 mt-6 max-w-3xl text-navy">
-              Sve usluge <em className="text-blue">poliklinike.</em>
+              Sve usluge poliklinike.
             </h2>
             <p className="lead mt-5 max-w-2xl">
               Popis usluga kako ga navodi poliklinika. Za informacije o pojedinoj usluzi i cijenama obratite se

@@ -12,7 +12,7 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Logo light />
             <p className="mt-8 max-w-md font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-4xl">
-              Tradicija, znanje <span className="accent text-blue-300">i ljubaznost.</span>
+              Tradicija, znanje i ljubaznost.
             </p>
             <p className="mt-6 max-w-md text-[0.95rem] text-white/60">
               Očna poliklinika i Optički studio «Dr. Sefić» su dvije odvojene privatne firme, osposobljene da u
