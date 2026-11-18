@@ -1,48 +1,49 @@
 import Image from "next/image";
-import type { CSSProperties } from "react";
 import { Phone, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Rings } from "@/components/Rings";
 import { site } from "@/content/site";
 import { lineage } from "@/content/team";
+import { HeroStage } from "./HeroStage";
 
-const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
-const i = (n: number) => ({ "--i": n }) as CSSProperties;
-
+// Statički prvi kadar je potpun: bez JS-a i uz smanjeno kretanje sve je odmah vidljivo,
+// a GSAP sekvencu u HeroStage pokreće samo kada je kretanje dozvoljeno.
 export function Hero() {
   return (
     <section className="container-x pt-2 md:pt-3">
-      <div className="relative isolate overflow-hidden rounded-[1.75rem] bg-[linear-gradient(105deg,#cfe7fa_0%,#e3f1fc_42%,#f3f9fe_100%)] md:rounded-[2.25rem] lg:min-h-[41rem]">
+      <HeroStage className="relative isolate overflow-hidden rounded-[1.75rem] bg-[linear-gradient(105deg,#cfe7fa_0%,#e3f1fc_42%,#f3f9fe_100%)] md:rounded-[2.25rem] lg:min-h-[41rem]">
         {/* blagi «svjetlosni» krug iza ljekara */}
         <div
           aria-hidden
           className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_74%_46%,#ffffff_0%,rgba(255,255,255,0.65)_22%,transparent_52%)]"
         />
-        <Rings
-          animated
+        <div
+          data-depth="-22"
           className="pointer-events-none absolute right-[3%] top-1/2 -z-10 hidden w-[52%] max-w-[46rem] -translate-y-[46%] lg:block"
-        />
+        >
+          <Rings animated className="w-full" />
+        </div>
 
         <div className="relative flex flex-col px-6 pt-10 md:px-14 md:pt-16 lg:min-h-[41rem] lg:w-[50%] lg:justify-center lg:pb-36 lg:pt-14">
-          <p className="eyebrow hero-fade self-start !bg-white/70" style={d(0)}>
+          <p data-hero-fade className="eyebrow self-start !bg-white/70">
             Očna poliklinika i Optički studio, Sarajevo
           </p>
           <h1 className="display t-hero mt-6 max-w-[12ch] text-navy">
             <span className="hero-line">
-              <span style={i(0)}>Generacije</span>
+              <span data-hero-line>Generacije</span>
             </span>
             <span className="hero-line">
-              <span style={i(1)}>posvećene</span>
+              <span data-hero-line>posvećene</span>
             </span>
             <span className="hero-line">
-              <span style={i(2)}>vašem vidu.</span>
+              <span data-hero-line>vašem vidu.</span>
             </span>
           </h1>
-          <p className="hero-fade mt-6 max-w-[27rem] text-[1.075rem] leading-relaxed text-ink/70" style={d(520)}>
+          <p data-hero-fade className="mt-6 max-w-[27rem] text-[1.075rem] leading-relaxed text-ink/70">
             Četvrta generacija oftalmologa porodice Sefić spaja naslijeđeno znanje sa savremenom dijagnostikom i
             hirurgijom oka.
           </p>
-          <div className="hero-fade mt-8 flex flex-col gap-3 sm:flex-row" style={d(660)}>
+          <div data-hero-fade className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href="/kontakt#termin">Zakažite pregled</Button>
             <Button href={site.phoneHref} variant="soft" icon={<Phone aria-hidden className="size-4" />}>
               {site.phoneLocal}
@@ -52,22 +53,22 @@ export function Hero() {
 
         {/* Autentična fotografija ljekara poliklinike (izvor: sefic.ba) */}
         <div className="relative mt-8 lg:absolute lg:bottom-0 lg:right-0 lg:mt-0 lg:w-[54%] lg:max-w-[52rem]">
-          <Rings
-            animated
-            className="pointer-events-none absolute inset-x-0 -top-8 -z-10 mx-auto w-[94%] lg:hidden"
-          />
-          <Image
-            src="/images/hero/doktori-grupa.webp"
-            alt="Ljekari Očne poliklinike Dr. Sefić: Prof. dr. Sanja Sefić Kasumović, dr. Armin Kasumović, dr. Ines Matoc Kasumović i dr. Aida Kasumović Bećirević"
-            width={1266}
-            height={832}
-            priority
-            quality={90}
-            sizes="(min-width: 1024px) 54vw, 100vw"
-            className="hero-rise relative h-auto w-full lg:-mr-[2%]"
-            style={d(300)}
-          />
-          <div style={d(1100)} className="hero-pop absolute left-[2%] top-[34%] hidden md:block">
+          <Rings animated className="pointer-events-none absolute inset-x-0 -top-8 -z-10 mx-auto w-[94%] lg:hidden" />
+          <div data-hero-photo className="origin-bottom">
+            <div data-depth="12">
+              <Image
+                src="/images/hero/doktori-grupa.webp"
+                alt="Ljekari Očne poliklinike Dr. Sefić: Prof. dr. Sanja Sefić Kasumović, dr. Armin Kasumović, dr. Ines Matoc Kasumović i dr. Aida Kasumović Bećirević"
+                width={1266}
+                height={832}
+                priority
+                quality={90}
+                sizes="(min-width: 1024px) 54vw, 100vw"
+                className="relative h-auto w-full"
+              />
+            </div>
+          </div>
+          <div data-hero-chip className="absolute left-[2%] top-[34%] hidden md:block">
             <div className="hero-float flex items-center gap-3 rounded-2xl bg-white/85 py-2.5 pl-2.5 pr-5 shadow-[0_18px_40px_-20px_rgba(10,42,94,0.45)] backdrop-blur">
               <span className="flex size-10 items-center justify-center rounded-xl bg-blue text-white">
                 <ShieldCheck aria-hidden className="size-5" />
@@ -82,8 +83,8 @@ export function Hero() {
 
         {/* Bijeli «usjek» s podatkom o tradiciji */}
         <div
-          style={d(850)}
-          className="hero-fade relative bg-white px-6 py-5 lg:absolute lg:bottom-0 lg:left-0 lg:rounded-tr-[2rem] lg:py-6 lg:pl-14 lg:pr-9"
+          data-hero-notch
+          className="relative bg-white px-6 py-5 lg:absolute lg:bottom-0 lg:left-0 lg:rounded-tr-[2rem] lg:py-6 lg:pl-14 lg:pr-9"
         >
           <span
             aria-hidden
@@ -115,7 +116,7 @@ export function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </HeroStage>
     </section>
   );
 }

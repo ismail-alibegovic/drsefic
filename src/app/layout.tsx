@@ -3,6 +3,11 @@ import "./globals.css";
 import { DemoRibbon } from "@/components/DemoRibbon";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SmoothScroll } from "@/components/SmoothScroll";
+
+// Prije prvog iscrtavanja označava da JS radi (početna stanja animacija). Ako se animacije
+// iz bilo kojeg razloga ne pokrenu u 4 s, oznaka se uklanja i sadržaj ostaje vidljiv.
+const motionBoot = `document.documentElement.classList.add("js");setTimeout(function(){if(!window.__motionReady)document.documentElement.classList.remove("js")},4000);`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dr-sefic-demo.local"),
@@ -32,7 +37,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="bs" className="antialiased">
+    <html lang="bs" className="antialiased" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: motionBoot }} />
+      </head>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#sadrzaj"
@@ -40,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Preskoči na sadržaj
         </a>
+        <SmoothScroll />
         <DemoRibbon />
         <Header />
         <main id="sadrzaj" className="flex-1">

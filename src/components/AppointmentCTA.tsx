@@ -5,6 +5,7 @@ import { bookingWays, site } from "@/content/site";
 import { Button } from "./Button";
 import { Reveal } from "./Reveal";
 import { Rings } from "./Rings";
+import { SplitHeading } from "@/components/SplitHeading";
 
 export function AppointmentCTA() {
   return (
@@ -18,7 +19,7 @@ export function AppointmentCTA() {
         <Reveal>
           <p className="eyebrow !text-blue-300">Naručivanje</p>
           <h2 id="cta-naslov" className="display t-1 mt-6 max-w-4xl">
-            Vaš vid zaslužuje posebnu pažnju.
+            <SplitHeading text="Vaš vid zaslužuje posebnu pažnju." />
           </h2>
           <p className="mt-6 max-w-xl text-lg text-white/70">
             Termin možete dogovoriti telefonom, e-mailom ili lično. Usluge su u pravilu dostupne u roku od dva do tri

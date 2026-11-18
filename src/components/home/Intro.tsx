@@ -3,6 +3,7 @@ import { ArrowLink } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { ImageReveal } from "@/components/ScrollFx";
 import { DoorOpen, House, Ruler } from "lucide-react";
+import { SplitHeading } from "@/components/SplitHeading";
 
 const facts = [
   { Icon: DoorOpen, k: "4", v: "Ambulante rade paralelno, uz kraće čekanje" },
@@ -32,7 +33,7 @@ export function Intro() {
         <Reveal className="lg:col-span-7">
           <p className="eyebrow">Poliklinika</p>
           <h2 id="poliklinika-naslov" className="display t-2 mt-6 text-navy">
-            Od prvog pregleda do operacione sale – pod jednim krovom.
+            <SplitHeading text="Od prvog pregleda do operacione sale – pod jednim krovom." />
           </h2>
         </Reveal>
         <Reveal delay={0.1} className="lg:col-span-4 lg:col-start-9 lg:pt-14">

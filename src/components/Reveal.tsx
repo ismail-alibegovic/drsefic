@@ -1,7 +1,7 @@
 "use client";
 
-import { MotionConfig, motion } from "motion/react";
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
+import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap";
 
 type Props = {
   children: ReactNode;
@@ -10,20 +10,36 @@ type Props = {
   className?: string;
 };
 
-// Suptilno otkrivanje sadržaja pri skrolanju. Uz «prefers-reduced-motion» pomak se
-// izostavlja (MotionConfig reducedMotion="user"), ostaje samo blagi prijelaz prozirnosti.
+// Otkrivanje sadržaja pri skrolanju (GSAP ScrollTrigger). Početno skrivanje radi samo CSS
+// pod klasom .js, pa je sadržaj bez JavaScripta i uz smanjeno kretanje odmah vidljiv.
 export function Reveal({ children, delay = 0, y = 28, className }: Props) {
+  const ref = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      const el = ref.current;
+      if (!el) return;
+      if (prefersReducedMotion()) {
+        gsap.set(el, { autoAlpha: 1, y: 0 });
+        return;
+      }
+      gsap.fromTo(
+        el,
+        { autoAlpha: 0, y },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1.1,
+          delay,
+          clearProps: "transform",
+          scrollTrigger: { trigger: el, start: "top 92%", once: true },
+        },
+      );
+    },
+    { scope: ref },
+  );
   return (
-    <MotionConfig reducedMotion="user">
-      <motion.div
-        className={className}
-        initial={{ opacity: 0, y }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-        transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {children}
-      </motion.div>
-    </MotionConfig>
+    <div ref={ref} data-reveal className={className}>
+      {children}
+    </div>
   );
 }

@@ -3,6 +3,7 @@ import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/ScrollFx";
 import { equipment } from "@/content/equipment";
+import { SplitHeading } from "@/components/SplitHeading";
 
 export function Technology() {
   const featured = equipment.filter((e) => e.featured);
@@ -13,7 +14,7 @@ export function Technology() {
           <Reveal className="lg:col-span-8">
             <p className="eyebrow">Tehnologija</p>
             <h2 id="tehnologija-naslov" className="display t-2 mt-6 text-navy">
-              Preciznost koja se mjeri u mikronima.
+              <SplitHeading text="Preciznost koja se mjeri u mikronima." />
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="lg:col-span-4 lg:pb-2">

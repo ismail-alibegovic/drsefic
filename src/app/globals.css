@@ -154,23 +154,76 @@ body {
   }
 }
 
-/* ---------- Hero: ulazna animacija (samo transform/opacity) ---------- */
-@keyframes line-up {
-  from { transform: translateY(108%) rotate(2.5deg); }
-  to { transform: none; }
+/* ---------- Kretanje (GSAP + Lenis) ----------
+   Klasu .js postavlja skripta u <head>. Početna (skrivena) stanja vrijede samo uz JS
+   i kada korisnik nije tražio smanjeno kretanje; inače je sve odmah vidljivo. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal],
+  .js [data-hero-fade],
+  .js [data-hero-photo],
+  .js [data-hero-notch],
+  .js [data-hero-chip] {
+    visibility: hidden;
+  }
+  .js [data-hero-line],
+  .js .split-w > [data-word] {
+    transform: translateY(110%);
+  }
+  .js [data-reveal-clip] {
+    clip-path: inset(0% 0% 100% 0%);
+  }
+  .js [data-draw] {
+    transform: scaleX(0);
+  }
 }
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: none; }
+
+html.lenis,
+html.lenis body {
+  height: auto;
 }
-@keyframes rise-in {
-  from { opacity: 0; transform: translateY(36px) scale(0.975); }
-  to { opacity: 1; transform: none; }
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
-@keyframes pop-in {
-  from { opacity: 0; transform: translateY(8px) scale(0.92); }
-  to { opacity: 1; transform: none; }
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
+
+.split-w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* prostor za dijakritike i silaznike da ih maska ne odsiječe */
+  padding: 0.1em 0.04em 0.14em 0;
+  margin: -0.1em -0.04em -0.14em 0;
+}
+.split-w > [data-word] {
+  display: inline-block;
+  will-change: transform;
+}
+
+.hero-line {
+  display: block;
+  overflow: hidden;
+  padding: 0.12em 0.08em 0.14em 0;
+  margin-top: -0.26em;
+}
+.hero-line:first-child {
+  margin-top: -0.12em;
+}
+.hero-line:last-child {
+  margin-bottom: -0.14em;
+}
+.hero-line > span {
+  display: block;
+  transform-origin: left bottom;
+}
+
+/* dekorativne petlje stoje kada hero nije na ekranu */
+.is-offscreen *,
+.is-offscreen {
+  animation-play-state: paused !important;
+}
+
 @keyframes floaty {
   from { transform: translateY(-4px); }
   to { transform: translateY(4px); }
@@ -192,37 +245,6 @@ body {
   to { opacity: 1; transform: none; }
 }
 
-.hero-line {
-  display: block;
-  overflow: hidden;
-  /* prostor za dijakritike i kurziv da ih maska ne odsiječe */
-  padding: 0.12em 0.08em 0.14em 0;
-  margin-top: -0.26em; /* susjedne negativne margine se stapaju, pa sve ide na gornju */
-}
-.hero-line:first-child {
-  margin-top: -0.12em;
-}
-.hero-line:last-child {
-  margin-bottom: -0.14em;
-}
-.hero-line > span {
-  display: block;
-  transform-origin: left bottom;
-  animation: line-up 1s var(--ease-out-soft) both;
-  animation-delay: calc(var(--i, 0) * 110ms + 120ms);
-}
-.hero-fade {
-  animation: fade-up 0.8s var(--ease-out-soft) both;
-  animation-delay: var(--d, 0ms);
-}
-.hero-rise {
-  animation: rise-in 1.2s var(--ease-out-soft) both;
-  animation-delay: var(--d, 0ms);
-}
-.hero-pop {
-  animation: pop-in 0.6s var(--ease-out-soft) both;
-  animation-delay: var(--d, 0ms);
-}
 .hero-float {
   animation: floaty 5s ease-in-out infinite alternate;
   animation-delay: var(--d, 0ms);

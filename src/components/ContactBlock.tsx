@@ -1,6 +1,7 @@
 import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { site } from "@/content/site";
 import { Button } from "./Button";
+import { SplitHeading } from "@/components/SplitHeading";
 
 export function ContactBlock({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const H = headingLevel;
@@ -9,7 +10,7 @@ export function ContactBlock({ headingLevel = "h2" }: { headingLevel?: "h1" | "h
       <div className="flex flex-col rounded-[1.5rem] bg-ice p-8 md:rounded-[2rem] md:p-12 lg:col-span-5">
         <p className="eyebrow">Kontakt</p>
         <H id="kontakt-naslov" className="display t-2 mt-6 text-navy">
-          U srcu Sarajeva, na Ferhadiji.
+          <SplitHeading text="U srcu Sarajeva, na Ferhadiji." />
         </H>
         <dl className="mt-10 space-y-6">
           <div className="flex gap-4">

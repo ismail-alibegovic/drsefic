@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight, Award, GraduationCap, Microscope } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { insurers } from "@/content/site";
+import { SplitHeading } from "@/components/SplitHeading";
 
 export function Trust() {
   return (
@@ -10,7 +11,7 @@ export function Trust() {
         <Reveal>
           <p className="eyebrow">Povjerenje</p>
           <h2 id="povjerenje-naslov" className="display t-2 mt-6 max-w-3xl text-navy">
-            Standardi koje je moguće provjeriti.
+            <SplitHeading text="Standardi koje je moguće provjeriti." />
           </h2>
         </Reveal>
 

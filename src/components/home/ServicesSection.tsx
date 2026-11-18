@@ -5,6 +5,7 @@ import { Aperture, ArrowUpRight, CircleDot, Eye, Gauge, ScanEye, ShieldPlus, Spa
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { services } from "@/content/services";
+import { SplitHeading } from "@/components/SplitHeading";
 
 const icons: Record<string, LucideIcon> = {
   "oftalmoloski-pregledi": ScanEye,
@@ -29,7 +30,7 @@ function ServiceCard({ s }: { s: (typeof services)[number] }) {
       <span className="absolute right-6 top-6 flex size-9 items-center justify-center rounded-full text-muted ring-1 ring-line transition-colors duration-300 group-hover:bg-blue group-hover:text-white group-hover:ring-blue">
         <ArrowUpRight aria-hidden className="size-4" />
       </span>
-      <h3 className="mt-10 font-display text-[1.375rem] font-semibold leading-tight tracking-tight text-navy">
+      <h3 className="mt-7 font-display md:mt-10 text-[1.375rem] font-semibold leading-tight tracking-tight text-navy">
         {s.navTitle}
       </h3>
       <p className="mt-2.5 text-[0.95rem] leading-relaxed text-muted">{s.short}</p>
@@ -53,14 +54,14 @@ export function ServicesSection() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Naše usluge</p>
           <h2 id="usluge-naslov" className="display t-2 mt-5 text-navy">
-            Savremena briga za svaku strukturu oka
+            <SplitHeading text="Savremena briga za svaku strukturu oka." />
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted">
             Operacije se izvode u lokalnoj anesteziji, uz maksimalnu sigurnost i komfor, bez bolničkog zadržavanja.
           </p>
         </Reveal>
 
-        <ul className="mt-14 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3 md:mt-16">
+        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3 md:mt-16">
           <li className="hidden lg:block">
             <PhotoTile src="/images/services/dijagnostika-pregled.jpg" alt="Pregled pacijentice na dijagnostičkom aparatu" />
           </li>

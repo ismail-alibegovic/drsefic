@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/ScrollFx";
+import { SplitHeading } from "@/components/SplitHeading";
 
 const offer = [
   "Okviri za naočale raznih vrsta i oblika",
@@ -36,7 +37,7 @@ export function Optical() {
         <Reveal delay={0.1} className="lg:col-span-5 lg:col-start-8">
           <p className="eyebrow">Optički studio</p>
           <h2 id="optika-naslov" className="display t-2 mt-6 text-navy">
-            Od nalaza do naočala – bez lutanja.
+            <SplitHeading text="Od nalaza do naočala – bez lutanja." />
           </h2>
           <p className="lead mt-6">
             Kompletna optička prodavaonica i radionica. Leće se u okvire montiraju automatski, na kompjuterskoj 3-D

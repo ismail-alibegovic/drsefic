@@ -2,6 +2,7 @@ import { ArrowLink } from "@/components/Button";
 import { DoctorCard } from "@/components/DoctorCard";
 import { Reveal } from "@/components/Reveal";
 import { doctors } from "@/content/team";
+import { SplitHeading } from "@/components/SplitHeading";
 
 export function TeamSection() {
   return (
@@ -10,7 +11,7 @@ export function TeamSection() {
         <Reveal>
           <p className="eyebrow">Naš tim</p>
           <h2 id="tim-naslov" className="display t-2 mt-6 max-w-3xl text-navy">
-            Specijalisti oftalmologije i optometrije.
+            <SplitHeading text="Specijalisti oftalmologije i optometrije." />
           </h2>
         </Reveal>
         <Reveal delay={0.1}>

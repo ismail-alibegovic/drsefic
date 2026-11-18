@@ -9,6 +9,7 @@ import { nav, site } from "@/content/site";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 import { ScrollProgress } from "./ScrollFx";
+import { getLenis } from "./SmoothScroll";
 
 export function Header() {
   const pathname = usePathname();
@@ -25,10 +26,12 @@ export function Header() {
   useEffect(() => {
     if (!open) return;
     document.body.style.overflow = "hidden";
+    getLenis()?.stop();
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      getLenis()?.start();
       window.removeEventListener("keydown", onKey);
     };
   }, [open]);
