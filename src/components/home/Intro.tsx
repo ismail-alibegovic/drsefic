@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowLink } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { ImageReveal } from "@/components/ScrollFx";
-import { DoorOpen, House, Ruler } from "lucide-react";
+import { DoorOpen, House, Ruler } from "@/components/icons";
 import { SplitHeading } from "@/components/SplitHeading";
 
 const facts = [

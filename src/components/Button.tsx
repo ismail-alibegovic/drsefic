@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/components/icons";
 import type { ReactNode } from "react";
 
 type Variant = "primary" | "ghost" | "soft" | "light" | "outline-light";

@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { LucideIcon } from "lucide-react";
-import { Aperture, ArrowUpRight, CircleDot, Eye, Gauge, ScanEye, ShieldPlus, Sparkles } from "lucide-react";
+import type { IconComponent } from "@/components/icons";
+import { Target, ArrowUpRight, CircleDot, Eye, Gauge, ScanEye, ShieldPlus, Sparkles } from "@/components/icons";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { services } from "@/content/services";
 import { SplitHeading } from "@/components/SplitHeading";
 
-const icons: Record<string, LucideIcon> = {
+const icons: Record<string, IconComponent> = {
   "oftalmoloski-pregledi": ScanEye,
   "laserska-korekcija-dioptrije": Sparkles,
   "operacija-mrene": CircleDot,
   "lijecenje-glaukoma": Gauge,
-  "bolesti-mreznice": Aperture,
+  "bolesti-mreznice": Target,
   okuloplastika: Eye,
   "kornealni-cross-linking": ShieldPlus,
 };

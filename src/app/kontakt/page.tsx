@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Info } from "lucide-react";
+import { Info } from "@/components/icons";
 import { ContactBlock } from "@/components/ContactBlock";
 import { InquiryForm } from "@/components/InquiryForm";
 import { Reveal } from "@/components/Reveal";

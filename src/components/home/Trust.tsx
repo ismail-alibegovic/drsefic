@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Award, GraduationCap, Microscope } from "lucide-react";
+import { ArrowUpRight, Award, GraduationCap, Microscope } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { insurers } from "@/content/site";
 import { SplitHeading } from "@/components/SplitHeading";

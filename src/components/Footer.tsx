@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "@/components/icons";
 import { nav, site } from "@/content/site";
 import { services } from "@/content/services";
 import { Logo } from "./Logo";

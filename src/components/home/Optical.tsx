@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Check } from "@/components/icons";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/ScrollFx";

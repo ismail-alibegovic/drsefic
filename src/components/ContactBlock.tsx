@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Navigation, Phone } from "@/components/icons";
 import { site } from "@/content/site";
 import { Button } from "./Button";
 import { SplitHeading } from "@/components/SplitHeading";

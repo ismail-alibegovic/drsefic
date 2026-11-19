@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "@/components/icons";
 
 const wayIcons = [MapPin, Phone, Mail, MessageCircle];
 import { bookingWays, site } from "@/content/site";

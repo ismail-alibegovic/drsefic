@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight } from "@/components/icons";
 import { Rings } from "./Rings";
 
 type Crumb = { href?: string; label: string };

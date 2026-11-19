@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, Plus } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Plus } from "@/components/icons";
 import { AppointmentCTA } from "@/components/AppointmentCTA";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";

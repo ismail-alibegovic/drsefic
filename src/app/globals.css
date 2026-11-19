@@ -86,7 +86,8 @@ body {
     letter-spacing: -0.02em;
   }
   .t-hero {
-    font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+    font-size: clamp(3rem, 6.3vw, 5.75rem);
+    letter-spacing: -0.042em;
   }
   .t-1 {
     font-size: clamp(2.4rem, 5vw, 4.25rem);
@@ -161,8 +162,7 @@ body {
   .js [data-reveal],
   .js [data-hero-fade],
   .js [data-hero-photo],
-  .js [data-hero-notch],
-  .js [data-hero-chip] {
+  .js [data-hero-notch] {
     visibility: hidden;
   }
   .js [data-hero-line],
@@ -175,6 +175,22 @@ body {
   .js [data-draw] {
     transform: scaleX(0);
   }
+}
+
+/* Uvodni loader (EyeLoader): vidljiv samo dok je html.is-loading. Kroz rupu u maski
+   (--r) se na kraju otvara stranica. */
+.eye-loader {
+  display: none;
+  --r: 0vmax;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent var(--r), #000 calc(var(--r) + 0.5px));
+  mask-image: radial-gradient(circle at 50% 50%, transparent var(--r), #000 calc(var(--r) + 0.5px));
+}
+html.is-loading .eye-loader {
+  display: flex;
+}
+html.is-loading,
+html.is-loading body {
+  overflow: hidden;
 }
 
 html.lenis,

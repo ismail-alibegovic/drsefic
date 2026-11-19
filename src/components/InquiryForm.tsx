@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail } from "lucide-react";
+import { Mail } from "@/components/icons";
 import { site } from "@/content/site";
 import { services } from "@/content/services";
 

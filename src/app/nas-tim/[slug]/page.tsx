@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "@/components/icons";
 import { AppointmentCTA } from "@/components/AppointmentCTA";
 import { Button } from "@/components/Button";
 import { DoctorCard } from "@/components/DoctorCard";
