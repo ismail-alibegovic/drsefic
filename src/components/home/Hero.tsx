@@ -11,7 +11,7 @@ import { HeroStage } from "./HeroStage";
 export function Hero() {
   return (
     <section className="container-x pt-2 md:pt-3">
-      <HeroStage className="relative isolate overflow-hidden rounded-[1.75rem] bg-[linear-gradient(105deg,#cfe7fa_0%,#e3f1fc_42%,#f3f9fe_100%)] md:rounded-[2.25rem] lg:min-h-[min(48rem,calc(100dvh-9rem))] xl:min-h-[min(52rem,calc(100dvh-9rem))]">
+      <HeroStage className="relative isolate overflow-hidden rounded-[1.75rem] bg-[linear-gradient(105deg,#cfe7fa_0%,#e3f1fc_42%,#f3f9fe_100%)] md:rounded-[2.25rem] lg:min-h-[min(42rem,calc(100dvh-8rem))] xl:min-h-[min(46rem,calc(100dvh-8rem))]">
         {/* blagi «svjetlosni» krug iza ljekara */}
         <div
           aria-hidden

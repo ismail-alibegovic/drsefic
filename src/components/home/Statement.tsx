@@ -34,7 +34,7 @@ export function Statement() {
       <p
         data-st-text
         aria-hidden
-        className="max-w-[26ch] font-display text-[clamp(2rem,4.8vw,5rem)] font-medium leading-[1.1] tracking-[-0.035em] text-navy md:max-w-[30ch]"
+        className="max-w-[26ch] font-display text-[clamp(1.85rem,3.9vw,3.9rem)] font-medium leading-[1.1] tracking-[-0.035em] text-navy md:max-w-[30ch]"
       >
         {text.split(" ").map((w, i) => (
           <span key={i}>

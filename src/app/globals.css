@@ -59,19 +59,14 @@ button {
 }
 
 /* Na većim ekranima sve (tipografija, razmaci, komponente) raste proporcionalno. */
-@media (min-width: 1280px) {
+@media (min-width: 1700px) {
   html {
     font-size: 106.25%;
   }
 }
-@media (min-width: 1600px) {
+@media (min-width: 2100px) {
   html {
     font-size: 118.75%;
-  }
-}
-@media (min-width: 2000px) {
-  html {
-    font-size: 131.25%;
   }
 }
 
@@ -155,14 +150,14 @@ body {
     letter-spacing: -0.02em;
   }
   .t-hero {
-    font-size: clamp(3rem, 5.6vw, 6.25rem);
+    font-size: clamp(2.75rem, 4.9vw, 5.5rem);
     letter-spacing: -0.042em;
   }
   .t-1 {
-    font-size: clamp(2.4rem, 5vw, 4.25rem);
+    font-size: clamp(2.3rem, 4.3vw, 3.75rem);
   }
   .t-2 {
-    font-size: clamp(2rem, 3.8vw, 3.25rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.85rem);
     line-height: 1.06;
   }
   .t-3 {
