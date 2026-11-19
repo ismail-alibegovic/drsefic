@@ -58,6 +58,23 @@ button {
   -webkit-user-drag: none;
 }
 
+/* Na većim ekranima sve (tipografija, razmaci, komponente) raste proporcionalno. */
+@media (min-width: 1280px) {
+  html {
+    font-size: 106.25%;
+  }
+}
+@media (min-width: 1600px) {
+  html {
+    font-size: 118.75%;
+  }
+}
+@media (min-width: 2000px) {
+  html {
+    font-size: 131.25%;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -92,16 +109,13 @@ body {
 }
 
 @layer components {
+  /* Širi okvir sa malim, fluidnim rubom: blokovi (hero, kartice) ostaju vidljivo odvojeni od
+     ivice, ali ne gube prostor na velikim ekranima. */
   .container-x {
     width: 100%;
-    max-width: 84rem;
+    max-width: 112rem;
     margin-inline: auto;
-    padding-inline: 1.25rem;
-  }
-  @media (min-width: 768px) {
-    .container-x {
-      padding-inline: 2.5rem;
-    }
+    padding-inline: clamp(1rem, 2.2vw, 2.75rem);
   }
 
   .display {
@@ -123,7 +137,7 @@ body {
     letter-spacing: -0.02em;
   }
   .t-hero {
-    font-size: clamp(3rem, 6.3vw, 5.75rem);
+    font-size: clamp(3rem, 5.6vw, 6.25rem);
     letter-spacing: -0.042em;
   }
   .t-1 {

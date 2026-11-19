@@ -11,7 +11,7 @@ import { HeroStage } from "./HeroStage";
 export function Hero() {
   return (
     <section className="container-x pt-2 md:pt-3">
-      <HeroStage className="relative isolate overflow-hidden rounded-[1.75rem] bg-[linear-gradient(105deg,#cfe7fa_0%,#e3f1fc_42%,#f3f9fe_100%)] md:rounded-[2.25rem] lg:min-h-[41rem]">
+      <HeroStage className="relative isolate overflow-hidden rounded-[1.75rem] bg-[linear-gradient(105deg,#cfe7fa_0%,#e3f1fc_42%,#f3f9fe_100%)] md:rounded-[2.25rem] lg:min-h-[min(48rem,calc(100dvh-9rem))] xl:min-h-[min(52rem,calc(100dvh-9rem))]">
         {/* blagi «svjetlosni» krug iza ljekara */}
         <div
           aria-hidden
@@ -25,7 +25,7 @@ export function Hero() {
           <Rings animated className="w-full" />
         </div>
 
-        <div data-hero-copy className="relative flex flex-col px-6 pt-10 md:px-14 md:pt-16 lg:min-h-[41rem] lg:w-[50%] lg:justify-center lg:pb-36 lg:pt-14">
+        <div data-hero-copy className="relative flex flex-col px-6 pt-10 md:px-14 md:pt-16 lg:min-h-[inherit] lg:w-[50%] lg:justify-center lg:pb-36 lg:pt-14">
           <p data-hero-fade className="eyebrow self-start !bg-white/70">
             Očna poliklinika i Optički studio, Sarajevo
           </p>
@@ -49,7 +49,7 @@ export function Hero() {
         </div>
 
         {/* Autentična fotografija ljekara poliklinike (izvor: sefic.ba) */}
-        <div className="relative mt-8 lg:absolute lg:bottom-0 lg:right-0 lg:mt-0 lg:w-[54%] lg:max-w-[52rem]">
+        <div className="relative mt-8 lg:absolute lg:bottom-0 lg:right-0 lg:mt-0 lg:w-[56%]">
           <Rings animated className="pointer-events-none absolute inset-x-0 -top-8 -z-10 mx-auto w-[94%] lg:hidden" />
           <div data-hero-photo className="origin-bottom">
             <div data-depth="12">
@@ -60,7 +60,7 @@ export function Hero() {
                 height={832}
                 priority
                 quality={90}
-                sizes="(min-width: 1024px) 54vw, 100vw"
+                sizes="(min-width: 1024px) 56vw, 100vw"
                 className="relative h-auto w-full"
               />
             </div>
