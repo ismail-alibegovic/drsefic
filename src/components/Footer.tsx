@@ -6,7 +6,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white">
+    <footer className="block-x mt-4 mb-[clamp(0.75rem,1.6vw,1.5rem)] bg-navy text-white">
       <div className="container-x pb-10 pt-20 md:pt-28">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">

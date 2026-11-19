@@ -111,6 +111,24 @@ body {
 @layer components {
   /* Širi okvir sa malim, fluidnim rubom: blokovi (hero, kartice) ostaju vidljivo odvojeni od
      ivice, ali ne gube prostor na velikim ekranima. */
+  /* Sekcija kao zaobljen «blok» s istim bočnim rubom kao hero; unutarnji sadržaj ima vlastiti razmak. */
+  .block-x {
+    width: calc(100% - 2 * clamp(1rem, 2.2vw, 2.75rem));
+    max-width: calc(112rem - 2 * clamp(1rem, 2.2vw, 2.75rem));
+    margin-inline: auto;
+    border-radius: 1.75rem;
+    overflow: clip;
+  }
+  @media (min-width: 768px) {
+    .block-x {
+      border-radius: 2.25rem;
+    }
+  }
+  .block-x .container-x {
+    max-width: none;
+    padding-inline: clamp(1.25rem, 4.5vw, 5.5rem);
+  }
+
   .container-x {
     width: 100%;
     max-width: 112rem;

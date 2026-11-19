@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { DemoRibbon } from "@/components/DemoRibbon";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileBar } from "@/components/MobileBar";
@@ -57,7 +56,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Preskoči na sadržaj
         </a>
         <SmoothScroll />
-        <DemoRibbon />
         <Header />
         <main id="sadrzaj" className="flex-1">
           {children}

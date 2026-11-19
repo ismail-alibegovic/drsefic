@@ -8,7 +8,7 @@ export function Tradition() {
   return (
     <section
       aria-labelledby="tradicija-naslov"
-      className="relative isolate overflow-hidden bg-navy py-24 text-white md:py-36"
+      className="block-x relative isolate my-4 bg-navy py-16 text-white md:my-8 md:py-28"
     >
       <ScrollDrift
         from={14}

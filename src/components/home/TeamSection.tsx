@@ -19,9 +19,9 @@ export function TeamSection() {
         </Reveal>
       </div>
       {/* mobitel: horizontalni carousel s nativnim snap-om; od sm naviše mreža */}
-      <ul className="-mx-5 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:mt-14 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-x-5 sm:gap-y-12 sm:overflow-visible sm:px-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
+      <ul className="-mx-[clamp(1rem,2.2vw,2.75rem)] mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-[clamp(1rem,2.2vw,2.75rem)] pb-2 [scrollbar-width:none] sm:mx-0 sm:mt-14 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-x-5 sm:gap-y-12 sm:overflow-visible sm:px-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
         {doctors.map((d, i) => (
-          <li key={d.slug} className="w-[78%] shrink-0 snap-start scroll-ml-5 sm:w-auto">
+          <li key={d.slug} className="w-[78%] shrink-0 snap-start scroll-ml-4 sm:w-auto">
             <Reveal delay={i * 0.07}>
               <DoctorCard doctor={d} />
             </Reveal>
