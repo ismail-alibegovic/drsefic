@@ -20,8 +20,6 @@ export function SmoothScroll() {
 
     const instance = new Lenis({ lerp: 0.11, wheelMultiplier: 0.95, anchors: { offset: -96 } });
     lenis = instance;
-    // dok traje uvodno oko, skrol stoji; EyeLoader ga ponovo pokreće
-    if (document.documentElement.classList.contains("is-loading")) instance.stop();
     instance.on("scroll", ScrollTrigger.update);
     const tick = (time: number) => instance.raf(time * 1000);
     gsap.ticker.add(tick);

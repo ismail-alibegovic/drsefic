@@ -37,19 +37,7 @@ export function HeroStage({ children, className }: { children: ReactNode; classN
           .fromTo(q("[data-hero-notch]"), { autoAlpha: 0, xPercent: -8 }, { autoAlpha: 1, xPercent: 0, duration: 1.1 }, 0.6),
       );
 
-      // Ako se prikazuje uvodno oko, hero kreće kada se zjenica otvori (ili najkasnije za 3,6 s).
-      let fallback = 0;
-      const onIntroDone = () => {
-        window.clearTimeout(fallback);
-        window.removeEventListener("sefic:intro-done", onIntroDone);
-        play();
-      };
-      if (document.documentElement.classList.contains("is-loading")) {
-        window.addEventListener("sefic:intro-done", onIntroDone);
-        fallback = window.setTimeout(onIntroDone, 3600);
-      } else {
-        play();
-      }
+      play();
 
       // Izlazak iz heroja na skrol (samo desktop): panel se blago povlači, fotografija i
       // krugovi idu različitim brzinama. Na mobitelu su tekst i slika jedno ispod drugog.
@@ -65,8 +53,6 @@ export function HeroStage({ children, className }: { children: ReactNode; classN
       const cleanupBase = () => {
         mm.revert();
         io.disconnect();
-        window.clearTimeout(fallback);
-        window.removeEventListener("sefic:intro-done", onIntroDone);
       };
       const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
       if (!fine.matches) return cleanupBase;

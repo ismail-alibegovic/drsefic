@@ -6,7 +6,7 @@ import { SplitHeading } from "@/components/SplitHeading";
 
 export function TeamSection() {
   return (
-    <section aria-labelledby="tim-naslov" className="container-x py-24 md:py-36">
+    <section aria-labelledby="tim-naslov" className="container-x py-16 md:py-36">
       <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
         <Reveal>
           <p className="eyebrow">Naš tim</p>
@@ -18,9 +18,10 @@ export function TeamSection() {
           <ArrowLink href="/nas-tim">Upoznajte cijeli tim</ArrowLink>
         </Reveal>
       </div>
-      <ul className="mt-14 grid gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+      {/* mobitel: horizontalni carousel s nativnim snap-om; od sm naviše mreža */}
+      <ul className="-mx-5 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:mt-14 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-x-5 sm:gap-y-12 sm:overflow-visible sm:px-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
         {doctors.map((d, i) => (
-          <li key={d.slug}>
+          <li key={d.slug} className="w-[78%] shrink-0 snap-start scroll-ml-5 sm:w-auto">
             <Reveal delay={i * 0.07}>
               <DoctorCard doctor={d} />
             </Reveal>

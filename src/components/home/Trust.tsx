@@ -6,7 +6,7 @@ import { SplitHeading } from "@/components/SplitHeading";
 
 export function Trust() {
   return (
-    <section aria-labelledby="povjerenje-naslov" className="bg-soft py-24 md:py-36">
+    <section aria-labelledby="povjerenje-naslov" className="bg-soft py-16 md:py-36">
       <div className="container-x">
         <Reveal>
           <p className="eyebrow">Povjerenje</p>

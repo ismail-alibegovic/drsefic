@@ -12,6 +12,7 @@ const map = {
   ArrowRight: "arrow-right-linear",
   ArrowUpRight: "arrow-right-up-linear",
   Award: "medal-ribbon-linear",
+  Calendar: "calendar-linear",
   Check: "check-read-linear",
   ChevronRight: "alt-arrow-right-linear",
   CircleDot: "record-circle-linear",

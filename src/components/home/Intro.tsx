@@ -28,7 +28,7 @@ const pillars = [
 
 export function Intro() {
   return (
-    <section id="poliklinika" aria-labelledby="poliklinika-naslov" className="container-x py-24 md:py-36">
+    <section id="poliklinika" aria-labelledby="poliklinika-naslov" className="container-x py-16 md:py-36">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-7">
           <p className="eyebrow">Poliklinika</p>

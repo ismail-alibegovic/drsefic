@@ -3,13 +3,12 @@ import "./globals.css";
 import { DemoRibbon } from "@/components/DemoRibbon";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MobileBar } from "@/components/MobileBar";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { EyeLoader } from "@/components/EyeLoader";
 
 // Prije prvog iscrtavanja označava da JS radi (početna stanja animacija). Ako se animacije
 // iz bilo kojeg razloga ne pokrenu u 4 s, oznaka se uklanja i sadržaj ostaje vidljiv.
-// is-loading (uvodno oko) samo pri prvoj posjeti u sesiji i bez smanjenog kretanja; najkasnije za 6 s nestaje.
-const motionBoot = `(function(){var d=document.documentElement;d.classList.add("js");try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("sefic-intro"))d.classList.add("is-loading")}catch(e){}setTimeout(function(){if(!window.__motionReady)d.classList.remove("js","is-loading")},4000);setTimeout(function(){d.classList.remove("is-loading")},6000)})();`;
+const motionBoot = `document.documentElement.classList.add("js");setTimeout(function(){if(!window.__motionReady)document.documentElement.classList.remove("js")},4000);`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dr-sefic-demo.local"),
@@ -34,7 +33,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#06204A",
+  // edge-to-edge ispod zareza/Dynamic Islanda; sadržaj se odmiče preko env(safe-area-inset-*)
+  viewportFit: "cover",
+  // tastatura smanjuje layout viewport i na Androidu, kao na iOS-u
+  interactiveWidget: "resizes-content",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#06204A" },
+    { media: "(prefers-color-scheme: dark)", color: "#06204A" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -51,13 +57,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Preskoči na sadržaj
         </a>
         <SmoothScroll />
-        <EyeLoader />
         <DemoRibbon />
         <Header />
         <main id="sadrzaj" className="flex-1">
           {children}
         </main>
         <Footer />
+        <MobileBar />
       </body>
     </html>
   );

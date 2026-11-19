@@ -82,7 +82,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobilni-meni"
             aria-label={open ? "Zatvori meni" : "Otvori meni"}
-            className="inline-flex size-12 items-center justify-center rounded-full bg-ice text-navy transition-colors hover:bg-ice-200 xl:hidden"
+            className="inline-flex size-12 items-center justify-center rounded-full bg-ice text-navy transition-[background-color,transform] active:scale-95 hover:bg-ice-200 xl:hidden"
           >
             {open ? <X aria-hidden className="size-5" /> : <Menu aria-hidden className="size-5" />}
           </button>
@@ -101,7 +101,7 @@ export function Header() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-x-0 top-full h-[calc(100dvh-100%)] overflow-y-auto bg-white xl:hidden"
           >
-            <nav aria-label="Mobilna navigacija" className="container-x flex min-h-full flex-col pb-8 pt-4">
+            <nav aria-label="Mobilna navigacija" className="container-x flex min-h-full flex-col pb-[calc(2rem+env(safe-area-inset-bottom,0px))] pt-4">
               <ul className="border-t border-line">
                 {nav.map((item, i) => (
                   <motion.li

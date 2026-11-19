@@ -14,7 +14,7 @@ const offer = [
 
 export function Optical() {
   return (
-    <section aria-labelledby="optika-naslov" className="container-x py-24 md:py-36">
+    <section aria-labelledby="optika-naslov" className="container-x py-16 md:py-36">
       <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-6">
           <figure className="relative">

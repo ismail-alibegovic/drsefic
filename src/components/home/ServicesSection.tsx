@@ -49,7 +49,7 @@ function PhotoTile({ src, alt }: { src: string; alt: string }) {
 export function ServicesSection() {
   const [first, ...rest] = services;
   return (
-    <section aria-labelledby="usluge-naslov" className="bg-soft py-24 md:py-32">
+    <section aria-labelledby="usluge-naslov" className="bg-soft py-16 md:py-32">
       <div className="container-x">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Naše usluge</p>

@@ -85,7 +85,7 @@ export function Statement() {
   );
 
   return (
-    <section ref={ref} aria-label="Porodica Sefić" className="container-x py-24 md:py-40">
+    <section ref={ref} aria-label="Porodica Sefić" className="container-x py-14 md:py-40">
       <p className="sr-only">{text}</p>
       <p
         data-st-text

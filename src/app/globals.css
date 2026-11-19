@@ -28,6 +28,36 @@
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* ---------- Mobilna osnova (osjećaj nativne aplikacije) ---------- */
+html {
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+input,
+textarea,
+select {
+  /* ispod 16px iOS Safari zumira stranicu pri fokusu */
+  font-size: 16px;
+}
+button,
+a,
+[role="button"],
+summary {
+  /* bez kašnjenja klika i bez zuma dvostrukim dodirom */
+  touch-action: manipulation;
+}
+button,
+[role="button"] {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+/* povratna informacija na pritisak radi na svakom ulazu; hover samo uz miš */
+a[class*="rounded"],
+button {
+  -webkit-user-drag: none;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -35,12 +65,19 @@ html {
 }
 
 body {
+  padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
   background: #fff;
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 1.0625rem;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0;
+  }
 }
 
 ::selection {
@@ -150,8 +187,10 @@ body {
     background-repeat: no-repeat;
     transition: background-size 0.35s var(--ease-out-soft);
   }
-  .link-underline:hover {
-    background-size: 100% 1px;
+  @media (hover: hover) and (pointer: fine) {
+    .link-underline:hover {
+      background-size: 100% 1px;
+    }
   }
 }
 
@@ -175,22 +214,6 @@ body {
   .js [data-draw] {
     transform: scaleX(0);
   }
-}
-
-/* Uvodni loader (EyeLoader): vidljiv samo dok je html.is-loading. Kroz rupu u maski
-   (--r) se na kraju otvara stranica. */
-.eye-loader {
-  display: none;
-  --r: 0vmax;
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent var(--r), #000 calc(var(--r) + 0.5px));
-  mask-image: radial-gradient(circle at 50% 50%, transparent var(--r), #000 calc(var(--r) + 0.5px));
-}
-html.is-loading .eye-loader {
-  display: flex;
-}
-html.is-loading,
-html.is-loading body {
-  overflow: hidden;
 }
 
 html.lenis,

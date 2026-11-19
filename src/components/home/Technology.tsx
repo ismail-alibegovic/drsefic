@@ -8,7 +8,7 @@ import { SplitHeading } from "@/components/SplitHeading";
 export function Technology() {
   const featured = equipment.filter((e) => e.featured);
   return (
-    <section aria-labelledby="tehnologija-naslov" className="bg-ice py-24 md:py-36">
+    <section aria-labelledby="tehnologija-naslov" className="bg-ice py-16 md:py-36">
       <div className="container-x">
         <div className="grid items-end gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-8">
